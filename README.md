@@ -117,7 +117,7 @@ skin show up in-game. See [PRIVACY.md](./PRIVACY.md).
 
 ## Contact
 
-Maintainer: **Salossov** - aplyt228@gmail.com
+Maintainer: **Salossov** - anton.play.lp@yandex.ru
 
 For Microsoft Identity Platform / Mojang AppID review questions, please
 contact the email above.
