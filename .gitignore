@@ -1,0 +1,45 @@
+# Rust
+**/target/
+**/Cargo.lock.bak
+
+# Node / Vite
+**/node_modules/
+**/dist/
+**/.vite/
+**/.tsbuild/
+**/*.tsbuildinfo
+
+# Env / secrets — НИКОГДА в репо
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# БД (локальные данные пользователей)
+**/data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# Логи
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# AI / agent configs (локальные)
+.devin/
+.claude/
+.cursor/
+.windsurf/
+.codeium/
+.codex/
+.aider*
+AGENTS.md.local
+CLAUDE.md.local

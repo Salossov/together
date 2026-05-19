@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #22c55e;
+  --color-brand-dark: #16a34a;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html, body, #app { height: 100%; }
+  body { font-family: var(--font-sans); }
+  a { @apply text-brand transition-colors; }
+  a:hover { @apply text-brand-dark; }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+         font-medium transition-colors;
+}
+@utility btn-primary {
+  @apply btn bg-brand text-zinc-950;
+}
+@utility btn-ghost {
+  @apply btn bg-zinc-800 text-zinc-100;
+}
+@utility btn-danger {
+  @apply btn bg-red-600 text-white;
+}
+
+@utility input {
+  @apply w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-800
+         placeholder:text-zinc-500;
+}
+@utility label {
+  @apply block text-sm font-medium text-zinc-300 mb-1;
+}
+@utility card {
+  @apply bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 backdrop-blur-sm;
+}
+@utility field-error {
+  @apply text-sm text-red-400 mt-1;
+}
+
+/* Состояния — отдельными правилами, чтобы не дёргать @apply на utilities */
+.btn:disabled         { @apply opacity-50 cursor-not-allowed; }
+.btn-primary:hover    { @apply bg-brand-dark; }
+.btn-ghost:hover      { @apply bg-zinc-700; }
+.btn-danger:hover     { @apply bg-red-500; }
+.input:focus          { @apply border-brand outline-none; }
