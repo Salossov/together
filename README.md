@@ -1,13 +1,9 @@
 # Together
 
-Custom authentication backend and web frontend for a small private
-**Minecraft: Java Edition** server running **NeoForge 1.21.1** with
-the *Create Aeronautics* modpack.
+**Full restructure incoming.**
+Custom authentication backend and web frontend for a small private **Minecraft: Java Edition** server running **NeoForge 1.21.1** with the *Create Aeronautics* modpack.
 
-The server runs in offline-mode (`online-mode=false`) for performance
-and modpack flexibility. This project provides a separate verification
-layer so we still know who is who - both for licensed Microsoft accounts
-and for friends who only want a local password.
+The server runs in offline-mode (`online-mode=false`) for performance and modpack flexibility. This project provides a separate verification layer so we still know who is who - both for licensed Microsoft accounts and for friends who only want a local password.
 
 > Personal, non-commercial project for ~10–30 friends.
 > Not affiliated with Mojang or Microsoft.
@@ -26,12 +22,9 @@ and for friends who only want a local password.
 
 ## Stack
 
-- **Backend** - Rust 1.95+, Axum 0.7, sqlx 0.8 (SQLite/PostgreSQL/MySQL,
-  picked at runtime via `DATABASE_URL`), JWT (HS256), bcrypt
-- **Frontend** - Vue 3.5, Vite 8, TypeScript 6, Pinia 3, vue-router 5,
-  TailwindCSS 4
-- **DB** - choose at runtime; optional secondary `BACKUP_DATABASE_URL`
-  for write mirroring (e.g. Postgres + SQLite snapshot)
+- **Backend** - Rust 1.95+, Axum 0.7, sqlx 0.8 (SQLite/PostgreSQL/MySQL, picked at runtime via `DATABASE_URL`), JWT (HS256), bcrypt
+- **Frontend** - Vue 3.5, Vite 8, TypeScript 6, Pinia 3, vue-router 5, TailwindCSS 4
+- **DB** - choose at runtime; optional secondary `BACKUP_DATABASE_URL` for write mirroring (e.g. Postgres + SQLite snapshot)
 
 ## Architecture
 
@@ -57,11 +50,7 @@ and for friends who only want a local password.
    └─────────────┘  └──────────────────┘
 ```
 
-During in-game login the server-side companion mod calls
-`POST /api/mc-server/validate_handshake` with the player's username and
-JWT. If the JWT is valid and matches, the backend returns the canonical
-`internal_uuid` and the player's skin (signed if available); otherwise
-401 and the mod kicks the player.
+During in-game login the server-side companion mod calls `POST /api/mc-server/validate_handshake` with the player's username and JWT. If the JWT is valid and matches, the backend returns the canonical `internal_uuid` and the player's skin (signed if available); otherwise 401 and the mod kicks the player.
 
 ## Endpoints (high level)
 
@@ -98,8 +87,7 @@ See `backend/README.md` and `frontend/README.md` for details.
 
 ## Privacy
 
-We collect the absolute minimum needed to make the auth work and the
-skin show up in-game. See [PRIVACY.md](./PRIVACY.md).
+We collect the absolute minimum needed to make the auth work and the skin show up in-game. See [PRIVACY.md](./PRIVACY.md).
 
 ## Security
 
@@ -119,5 +107,4 @@ skin show up in-game. See [PRIVACY.md](./PRIVACY.md).
 
 Maintainer: **Salossov** - anton.play.lp@yandex.ru
 
-For Microsoft Identity Platform / Mojang AppID review questions, please
-contact the email above.
+For Microsoft Identity Platform / Mojang AppID review questions, please contact the email above.
