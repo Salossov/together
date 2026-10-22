@@ -1,7 +1,7 @@
 # Together
 
-**Full restructure incoming.**
-Custom authentication backend and web frontend for a small private **Minecraft: Java Edition** server running **NeoForge 1.21.1** with the *Create Aeronautics* modpack.
+
+Custom authentication backend and web frontend for a small private **Minecraft: Java Edition** server running **NeoForge 1.21.1** with the *Create Aeronautics* modpack. **Full restructure incoming.**
 
 The server runs in offline-mode (`online-mode=false`) for performance and modpack flexibility. This project provides a separate verification layer so we still know who is who - both for licensed Microsoft accounts and for friends who only want a local password.
 
